@@ -47,6 +47,17 @@ jobs:
           push: true
           tags: docker-registry.toxiccat.ru/it-static-website:latest
 
+      # Build and Push
+      # it-frontend-monolith-nextjs14
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          # Путь в котором будут выполняться комманды для сборки
+          context: ./frontend-monolith-nextjs14
+          file: ./frontend-monolith-nextjs14/docker/prod/Dockerfile
+          push: true
+          tags: docker-registry.toxiccat.ru/it-frontend-monolith-nextjs14:latest
+
   # Автоматическое создание Pull Request'a из DEV ветки в MAIN
   # Автоматический merge Pull Request'a
   auto-pr-mr:
