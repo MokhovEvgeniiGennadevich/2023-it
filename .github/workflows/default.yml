@@ -38,7 +38,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       # Запускаем docker-команду
-      - name: Build and push
+      - name: Docker - Build and Push - static-website
         uses: docker/build-push-action@v4
         with:
           # Путь в котором будут выполняться комманды для сборки
@@ -49,7 +49,9 @@ jobs:
 
       # Build and Push
       # it-frontend-monolith-nextjs14
-      - name: Build and push
+      - name:
+          Docker - Build and Push -
+          frontend-monolith-nextjs14
         uses: docker/build-push-action@v4
         with:
           # Путь в котором будут выполняться комманды для сборки
