@@ -1,6 +1,7 @@
 import HeaderMenu from "@/components/ui/HeaderMenu/HeaderMenu";
 import "../globals.css";
 import Logo from "@/components/ui/Logo/Logo";
+import FooterComponent from "@/components/footer/Footer";
 
 export default function RootLayout({
   children,
@@ -15,6 +16,8 @@ export default function RootLayout({
           <HeaderMenu />
         </header>
         {children}
+
+        <FooterComponent />
       </body>
     </html>
   );
