@@ -4,5 +4,5 @@ git:
 
 # Run DEV
 run:
-	cd frontend-monolith-nextjs14 &&\
+	cd fullstack-monolith-nextjs14 &&\
 	npm run dev
