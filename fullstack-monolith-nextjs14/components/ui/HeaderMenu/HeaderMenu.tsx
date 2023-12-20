@@ -1,11 +1,9 @@
 import Link from "next/link";
+import styles from "./HeaderMenu.module.scss";
 
 export default function HeaderMenu() {
   return (
-    <ul>
-      <li>
-        <Link href='/'>Главная</Link>
-      </li>
+    <ul className={styles.menu}>
       <li>
         <Link href='/auth/sign-in'>Вход</Link>
       </li>
