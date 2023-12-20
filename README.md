@@ -1,6 +1,6 @@
 # IT / Айти
 
-## FrontEnd Monolith `Next JS 14`
+## FrontEnd Монолит на `Next JS 14`
 
 ### [Рабочий пример](https://it-frontend-monolith-nextjs14.mokhov-evgenii-gennadevich.com/)
 
