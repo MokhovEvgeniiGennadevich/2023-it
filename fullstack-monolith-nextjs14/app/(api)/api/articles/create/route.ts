@@ -1,10 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: Request) {
-  const response = {
+export async function POST(request: NextRequest) {
+  const requestData = await request.json();
+
+  // Response
+  return NextResponse.json({
     result: "success",
-    message: "article created",
-  };
-
-  return NextResponse.json(response);
+    data: {
+      title: requestData.title,
+      content: requestData.content,
+    },
+  });
 }

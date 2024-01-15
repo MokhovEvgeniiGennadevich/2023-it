@@ -29,12 +29,17 @@ export default function DashboardArticlesCreateForm() {
   const response = async (
     formData: DashboardArticlesCreateDto
   ) => {
+    const requestBody = {
+      title: title,
+      content: content,
+    };
+
     const res = await fetch("/api/articles/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title: "ok" }),
+      body: JSON.stringify(requestBody),
     });
 
     const responseData = await res.json();

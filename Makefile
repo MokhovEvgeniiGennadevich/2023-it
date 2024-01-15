@@ -13,6 +13,11 @@ run:
 	cd fullstack-monolith-nextjs14 &&\
 	npm run dev
 
+# Run BUILD
+build:
+	cd fullstack-monolith-nextjs14 &&\
+	npm run build
+
 # DB: Redis Cache
 redis:
 	docker run --name redis7 -p 6379:6379 -d redis:7-alpine
