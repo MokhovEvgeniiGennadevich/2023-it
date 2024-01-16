@@ -10,8 +10,18 @@ git:
 
 # Run DEV
 run:
-	cd fullstack-monolith-nextjs14 &&\
-	npm run dev
+	make -j 2 run-backend run-frontend
+.PHONY: run
+
+# Run BackEnd
+run-backend:
+	cd backend-monolith-fastify4 && npm run dev
+.PHONY: run-backend
+
+# Run FrontEnd
+run-frontend:
+	cd frontend-webapp-nextjs14 && npm run dev
+.PHONY: run-frontend
 
 # DB: Redis Cache
 redis:
