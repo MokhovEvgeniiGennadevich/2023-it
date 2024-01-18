@@ -1,23 +1,26 @@
 "use client";
 
+import { userType } from "@/types/user";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function TopMenuComponent() {
+type PropsType = {
+  user: userType;
+};
+
+export default function TopMenuComponent(props: PropsType) {
   const menuItems = [
     { name: "Main", path: "/" },
     { name: "About", path: "/about" },
     { name: "About - Us", path: "/about/us" },
+    { name: "Characters", path: "/characters" },
   ];
 
   // Мы получаем текущий URL от Next JS 14
   const currentUrl = usePathname();
 
-  console.log(currentUrl);
-
   return (
-    <div>
-      Top Menu
+    <>
       <ul>
         <li>
           {menuItems.map((item) => {
@@ -47,6 +50,6 @@ export default function TopMenuComponent() {
           })}
         </li>
       </ul>
-    </div>
+    </>
   );
 }

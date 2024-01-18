@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import TopMenuComponent from "@/components/menu/TopMenu";
+import { userType } from "@/types/user";
+import UserProfile from "@/components/userProfile";
+import LogoComponent from "@/components/Logo";
+
+let user: userType = { id: null, name: null };
+
+// Читаем cookie
+// Читаем JWT из cookie
+// Валидируем JWT
+// Берем пользователя из JWT
+// user = {
+//   id: "1",
+//   name: "John",
+// };
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +29,13 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body>
-        <TopMenuComponent />
+        <header className='flex flex-row justify-between m-2'>
+          <LogoComponent />
+          <TopMenuComponent user={user} />
+          <UserProfile user={user} />
+        </header>
+
+        {user.name}
         {children}
       </body>
     </html>
